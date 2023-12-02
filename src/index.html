@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html prefix="og: https://ogp.me/ns#">
+  <head>
+    @@include('components/_head.html', { "lang":"en", 
+    "title":"Военный учебный центр АГУ", 
+    "charset":"UTF-8", 
+    "description":"", 
+    "keywords":"",
+    "favicon":"images/favicon" 
+  })
+  </head>
+  <body style="min-height: 100vh">
+    <div class="layout">
+      <div class="background"></div>
+      @@include('components/header/_header.html')
+      @@include('components/header/menu.html')
+      <main class="main">
+        @@include('components/sections/preview/preview.html')
+        @@include('components/sections/requirements/requirements.html')
+        @@include('components/sections/admission-process/admission-process.html')
+        @@include('components/sections/documents/documents.html')
+        @@include('components/sections/specialties/specialties.html')
+        @@include('components/sections/training-programs/training-programs.html')
+        @@include('components/sections/educational-base/educational-base.html')
+        @@include('components/sections/form/form.html')
+      </main>
+      @@include('components/footer/_footer.html')
+      @@include('components/_scripts.html')
+    </div>
+  </body>
+</html>

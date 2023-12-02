@@ -1,0 +1,130 @@
+.admission-process {
+  width: 100%;
+  padding: 100px 155px 250px;
+  position: relative;
+  &__title {
+    color: #ffffff;
+    margin-bottom: 80px;
+  }
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  &__item {
+    color: #fff;
+    font-family: Ubuntu;
+    font-size: 20px;
+    margin-bottom: 110px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 768px;
+    &-number {
+      color: #477651;
+      margin-right: 25px;
+      line-height: 50px;
+      font-size: 80px;
+      animation: textVisible 0.75s ease-in-out;
+    }
+    &-info {
+      max-width: 480px;
+    }
+    &-title {
+      margin-bottom: 10px;
+      text-transform: none;
+      animation: textVisibleSmall 0.75s ease-in-out;
+    }
+    &-description {
+      animation: textVisibleSmall 0.75s ease-in-out;
+    }
+    &-description,
+    &-description a {
+      font-size: 20px;
+      line-height: 150%;
+      font-weight: 400;
+    }
+    &:first-child,
+    &:last-child {
+      transform: translateX(-50%);
+    }
+    &:nth-child(2),
+    &:nth-last-child(2) {
+      transform: translateX(-30%);
+    }
+    &:nth-child(3),
+    &:nth-last-child(3) {
+      transform: translateX(-10%);
+    }
+    &:nth-child(2n) {
+      margin-bottom: 80px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__preview {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    max-width: 500px;
+    z-index: -1;
+    animation: fadeIn 1s linear;
+    img {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 80px;
+      z-index: 3;
+    }
+    svg {
+      width: 120%;
+      position: absolute;
+      left: 0;
+      z-index: 2;
+      top: -50px;
+    }
+  }
+  &::after {
+    content: "";
+    background-image: url("../../../images/masks/triangle-reverse.svg");
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(0);
+    width: 640px;
+    height: 480px;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 20px 20px 100px;
+    &__title {
+      margin-bottom: 40px;
+    }
+    &__preview {
+      display: none;
+    }
+    &__item {
+      justify-content: flex-start;
+      transform: translate(0, 0) !important;
+      &-number {
+        font-size: 50px;
+      }
+      &-info {
+        max-width: 100%;
+      }
+      &-title,
+      &-description,
+      &-description a {
+        font-size: 16px;
+      }
+    }
+    &::after {
+      width: 80px;
+      height: 55px;
+    }
+  }
+}

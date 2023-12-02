@@ -1,0 +1,73 @@
+.form {
+  padding: 80px 40px 60px;
+  min-height: 660px;
+  background-image: url("../../../images/masks/form-bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  label {
+    color: #0a1f0f;
+    font-family: Ubuntu;
+    font-size: 16px;
+    line-height: 125%; /* 20px */
+    margin-bottom: 5px;
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+      color: #ffffff;
+    }
+  }
+  &__input-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  input {
+    border: 1.5px solid #0a1f0f;
+    font-size: 16px !important;
+    font-family: Ubuntu;
+    padding: 12px 15px;
+    color: #0a1f0f;
+    line-height: 125%; /* 20px */
+  }
+  &__send-button {
+    transition: all 0.25s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto 0;
+    padding: 10px 20px;
+    border: 1.5px solid #e9a816;
+    background-color: #ffffff;
+    cursor: pointer;
+    min-width: 240px;
+    text-align: center;
+    color: #e9a816;
+    stroke: #e9a816;
+    font-family: Ubuntu;
+    font-size: 20px;
+    line-height: 150%;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #e9a816;
+      color: #fff;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+      padding: 6px 20px;
+      background-color: transparent;
+    }
+  }
+  &__error {
+    label {
+      color: #e13838;
+    }
+    input {
+      border-color: #e13838;
+      outline-color: #e13838;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    background: none;
+    padding: 0;
+    min-height: 0;
+  }
+}

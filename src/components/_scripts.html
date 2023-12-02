@@ -1,0 +1,37 @@
+<script>
+  // Логика burger-меню
+  let overflow = "auto";
+  const headerBurger = document.querySelector(".header__burger");
+  const menu = document.querySelector(".menu");
+  const moreButton = document.getElementById("more-button");
+  headerBurger.addEventListener("click", () => {
+    toggleMenu();
+  });
+  // Ссылки с прокруткой
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (e.target.classList.contains("menu-link")) {
+        toggleMenu();
+      }
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+  moreButton.addEventListener("click", () => {
+    document.querySelector(".documents__container").classList.add("open");
+    moreButton.style.display = "none";
+  });
+  function toggleMenu() {
+    headerBurger.classList.toggle("open");
+    document.querySelector(".menu").classList.toggle("open");
+    if (overflow === "auto") {
+      overflow = "hidden";
+      document.body.style.overflow = "hidden";
+    } else {
+      overflow = "auto";
+      document.body.style.overflow = "auto";
+    }
+  }
+</script>

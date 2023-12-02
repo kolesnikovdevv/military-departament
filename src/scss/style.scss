@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import "_fonts.scss";
+@import "_normilize.scss";
+@import "_animation.scss";
+@import "_button.scss";
+@import "_text.scss";
+@import "_form.scss";
+@import "../components/**/*.scss";
+
+@function calc-between-width(
+  $width-start,
+  $value-start,
+  $width-end,
+  $value-end
+) {
+  @return calc(
+    #{$value-start} * 1px + (#{$value-end} - #{$value-start}) * (
+        100vw - #{$width-start} * 1px
+      ) / (#{$width-end} - #{$width-start})
+  );
+}
+body {
+  background: linear-gradient(338deg, #0a1f0f 2.61%, #093413 13.2%);
+  font-size: 16px;
+}
+
+.background {
+  background: url("../images/camouflage.png"),
+    linear-gradient(338deg, #0a1f0f 8.61%, #093413 13.2%),
+    lightgray 80% / cover no-repeat;
+  mix-blend-mode: overlay;
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.layout {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.layout-1440 {
+  width: calc-between-width(4800, 1400, 768, 1400);
+  max-width: 1400px;
+  margin: 0 auto;
+  @media screen and (min-width: 1440px) {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout-1440 {
+    width: calc-between-width(768, auto, 320, auto);
+    max-width: 100%;
+  }
+}

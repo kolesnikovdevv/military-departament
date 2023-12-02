@@ -1,0 +1,197 @@
+.requirements {
+  width: 100%;
+  padding: 190px 155px 140px;
+  position: relative;
+  display: flex;
+  min-height: 730px;
+  background-image: url("../../../images/masks/requirements-bg.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  &__title {
+    color: #0a1f0f;
+    margin-bottom: 40px;
+    animation: slide 0.75s;
+  }
+  &__container {
+    color: #0a1f0f;
+    max-width: 555px;
+  }
+  &__text {
+    font-family: Ubuntu;
+    font-size: 20px;
+    line-height: 30px;
+    animation: textVisible 0.75s linear;
+  }
+  &__image {
+    position: absolute;
+    right: 190px;
+    animation: slideIn2 1s ease-in-out;
+    &::before,
+    &::after {
+      content: "";
+      width: 250px;
+      height: 2px;
+      position: absolute;
+    }
+    &::before {
+      top: 0;
+      left: 0;
+      background-color: #0a1f0f;
+      transform: rotate(-45deg) translate(-90px, -30px);
+    }
+    &::after {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: #ffffff;
+      transform: rotate(-45deg) translate(90px, 30px);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding: 100px 20px 0;
+    background-image: url("../../../images/masks/requirements-bg-mobile.png");
+    background-size: 375px 375px;
+    &__container {
+      padding-top: 340px;
+      color: #ffffff;
+      br:nth-of-type(1) {
+        display: none;
+      }
+    }
+    &__title {
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+    &__image {
+      position: absolute;
+      left: 0;
+      right: auto;
+      transform: translate(15%, -13.33%);
+      animation: none;
+      img {
+        width: 270px;
+        width: 270px;
+      }
+      &::before,
+      &::after {
+        content: "";
+        width: 100px;
+        height: 2px;
+        position: absolute;
+      }
+      &::before {
+        top: 0;
+        left: 0;
+        background-color: #0a1f0f;
+        transform: rotate(-45deg) translate(-33.3%, 0px);
+      }
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #ffffff;
+        transform: rotate(-45deg) translate(150%, 6000%);
+      }
+    }
+  }
+}
+
+.after-requirements {
+  padding: 80px 40px 140px;
+  min-height: 600px;
+  &__title {
+    color: #ffffff;
+    text-transform: none;
+    margin-bottom: 40px;
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &__item {
+    padding: 25px;
+    margin-right: 20px;
+    color: #0a1f0f;
+    font-family: Ubuntu;
+    font-size: 20px;
+    line-height: 150%;
+    position: relative;
+    &::before {
+      content: "";
+      background-size: cover;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    &:first-child {
+      &::before {
+        background-image: url("../../../images/masks/requirements-right-top.svg");
+      }
+    }
+    &:nth-child(2) {
+      transform: translateY(75px);
+      &::before {
+        background-image: url("../../../images/masks/requirements-double.svg");
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+      transform: translateY(150px);
+      &::before {
+        background-image: url("../../../images/masks/requirements-left-bottom.svg");
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding: 100px 20px 60px;
+    &__title {
+      margin-bottom: 30px;
+      br {
+        display: none;
+      }
+    }
+
+    &__list {
+      flex-direction: column;
+    }
+    &__item {
+      transform: translateY(0);
+      margin-right: 0;
+      margin-bottom: 20px;
+      font-size: 16px;
+      &::before {
+        transform: rotateY(180deg);
+      }
+      &:first-child {
+        transform: translateY(0);
+        &::before {
+          transform: rotateY(0deg);
+          background-image: url("../../../images/masks/left-top.png");
+        }
+      }
+      &:nth-child(2) {
+        transform: translateY(0);
+        background-color: #ffffff;
+        &::before {
+          content: none;
+        }
+      }
+      &:last-child {
+        transform: translateY(0);
+        margin-right: 0;
+        margin-bottom: 0;
+        width: 100%;
+        &::before {
+          background-image: url("../../../images/masks/requirements-left-bottom.svg");
+          background-position: bottom left;
+        }
+      }
+    }
+  }
+}

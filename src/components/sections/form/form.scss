@@ -1,0 +1,41 @@
+.proposal {
+  padding: 50px 155px 155px;
+  &__title {
+    margin-bottom: 80px;
+    text-align: center;
+    color: #fff;
+  }
+  &__content {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+  }
+  &__form {
+    margin-right: 135px;
+    min-width: 450px;
+    width: 30vw;
+    max-width: 555px;
+  }
+  &__text {
+    color: #fff;
+    font-family: Ubuntu;
+    font-size: 20px;
+    line-height: 150%;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 20px 20px 100px;
+    &__title {
+      margin-bottom: 40px;
+      text-align: left;
+    }
+    &__info {
+      display: none;
+    }
+    &__form {
+      min-width: 0;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+}

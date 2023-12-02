@@ -1,0 +1,87 @@
+<div class="proposal layout-1440">
+  <h2 class="proposal__title" data-text="заявка на обучение в ВУЦ">
+    заявка на обучение в ВУЦ
+  </h2>
+  <div class="proposal__content">
+    <div class="proposal__form">
+      <iframe name="hiddenFrame" width="0" height="0" style="display: none">
+      </iframe>
+      <form class="form" method="post" action="send.php">
+        <div class="form__input-field">
+          <label for="name">ФИО*</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form__input-field">
+          <label for="kurs">Курс*</label>
+          <input type="number" id="kurs" name="kurs" required min="1" max="5" />
+        </div>
+        <div class="form__input-field">
+          <label for="facult">Факультет*</label>
+          <input type="text" id="facult" name="facult" required />
+        </div>
+        <div class="form__input-field">
+          <label for="birth">Год рождения*</label>
+          <input
+            id="birth"
+            name="birth"
+            required
+            type="date"
+            required
+            min="1960-01-01"
+            max="2023-12-31"
+          />
+        </div>
+        <div class="form__input-field">
+          <label for="phone">Номер телефона*</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            required
+            oninput="validatePhoneNumber(this.value)"
+          />
+        </div>
+        <button class="form__send-button" type="submit">Подать заявку</button>
+        <input type="hidden" name="REQUEST_METHOD" value="POST" />
+      </form>
+    </div>
+    <div class="proposal__info">
+      <p class="proposal__text">
+        Оставьте свои контактные данные, чтобы мы могли добавить вас в
+        конкурсный список граждан, желающих пройти военную подготовку.
+      </p>
+      <br />
+      <p class="proposal__text">
+        Прием документов на поступление открыт с 1 октября 2023 года.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  let errorMessage = document.createElement("span"); // is a node
+  function validatePhoneNumber(phoneNumber) {
+    // Удаляем все символы, кроме цифр
+    var cleanedPhoneNumber = phoneNumber.replace(/\D/g, "");
+    // Проверяем, что номер начинается с 7, 8
+    var firstDigit = cleanedPhoneNumber.charAt(0);
+    // Проверяем длину номера телефона
+    if (
+      (firstDigit !== "7" && firstDigit !== "8") ||
+      cleanedPhoneNumber.length > 11 ||
+      cleanedPhoneNumber.length < 11
+    ) {
+      errorMessage.innerHTML = document
+        .getElementById("phone")
+        .parentNode.classList.add("form__error");
+      return false;
+    } else {
+      errorMessage.innerHTML = document
+        .getElementById("phone")
+        .parentNode.classList.remove("form__error");
+      return true;
+    }
+    // Все проверки пройдены, номер телефона валиден
+    return true;
+  }
+</script>

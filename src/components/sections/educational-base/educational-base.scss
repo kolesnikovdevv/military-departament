@@ -1,0 +1,37 @@
+.educational-base {
+  padding: 200px 155px;
+  position: relative;
+  &__title {
+    margin-bottom: 60px;
+    color: #ffffff;
+    text-align: center;
+  }
+  &__text {
+    max-width: 60vw;
+    color: #ffffff;
+    font-family: Ubuntu;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    color: #ffffff;
+    font-family: Ubuntu;
+    font-size: 20px;
+    line-height: 150%;
+  }
+  &__map {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 100px 20px;
+    &__title {
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    &__text {
+      max-width: 100%;
+      font-size: 16px;
+      margin-bottom: 60px;
+    }
+  }
+}

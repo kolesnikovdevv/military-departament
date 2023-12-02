@@ -1,0 +1,124 @@
+.training-programs {
+  padding: 200px 155px;
+  background-color: #ffffff;
+  position: relative;
+  &__title {
+    margin-bottom: 60px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    &-title {
+      font-size: 20px;
+      line-height: 125%;
+      margin-bottom: 25px;
+      text-transform: none;
+    }
+    &-text {
+      font-size: 20px;
+      line-height: 150%;
+    }
+    &-img {
+      margin-left: 50px;
+      min-width: 275px;
+      min-height: 275px;
+      max-width: 275px;
+      max-height: 275px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &--inverse {
+      .training-programs__item {
+        &-img {
+          margin-left: 0;
+          margin-right: 60px;
+          order: -1;
+        }
+      }
+    }
+  }
+  &::before {
+    content: "";
+    background-image: url("../../../images/masks/triangle-reverse.svg");
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-95%);
+    width: 440px;
+    height: 280px;
+  }
+  &::after {
+    content: "";
+    background-image: url("../../../images/masks/triangle.svg");
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-37.25%, 50%) rotate(135deg);
+    width: 440px;
+    height: 280px;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 100px 20px;
+    &__title {
+      margin-bottom: 40px;
+    }
+    &__item {
+      position: relative;
+      &-title {
+        margin-bottom: 20px;
+      }
+      &-text {
+        font-size: 16px;
+        &--inner {
+          max-width: 60%;
+        }
+      }
+      &-img {
+        position: absolute;
+        max-width: 170px;
+        min-width: 170px;
+        height: auto;
+        bottom: 0;
+        right: 0;
+        transform: translate(30%, 40%);
+      }
+      &--inverse {
+        .training-programs__item {
+          &-img {
+            left: 0;
+            transform: translate(-35%, 45%);
+          }
+          &-text {
+            &--inner {
+              margin-left: auto;
+            }
+          }
+        }
+      }
+    }
+    &::after,
+    &::before {
+      width: 200px;
+      height: 140px;
+    }
+    &::after {
+      transform: translate(-50%, 75%);
+    }
+    &::before {
+      width: 80px;
+      height: 55px;
+    }
+  }
+}

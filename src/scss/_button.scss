@@ -1,0 +1,23 @@
+button {
+  transition: all 0.25s ease-in-out;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1.5px solid #e9a816;
+  color: #e9a816;
+  stroke: #e9a816;
+  background-color: #fff;
+  font-family: Ubuntu;
+  font-size: 20px;
+  line-height: 150%;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #e9a816;
+    color: #fff;
+    stroke: #fff;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    padding: 6px 20px;
+  }
+}

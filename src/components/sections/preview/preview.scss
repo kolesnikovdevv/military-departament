@@ -1,0 +1,140 @@
+.preview {
+  &__title {
+    width: 100%;
+    padding: 10vh 40px;
+    @media screen and (max-width: 768px) {
+      padding: 40px 20px;
+      min-height: 270px;
+    }
+  }
+  &__text {
+    color: #fff;
+    letter-spacing: -2.3px;
+    text-align: left;
+    color: #fff;
+    white-space: nowrap;
+    animation: slideIn 1s ease-in-out;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &--second {
+      text-align: right;
+    }
+    &--mobile-second {
+      display: none;
+    }
+    &--mobile-last {
+      display: none;
+    }
+    @media screen and (max-width: 768px) {
+      text-align: left;
+      &--second {
+        display: none;
+      }
+      &--mobile-second {
+        display: flex;
+        justify-content: flex-end;
+      }
+      &--mobile-last {
+        width: 100%;
+        display: inline-block;
+      }
+    }
+  }
+  &__container {
+    width: 100%;
+    position: relative;
+  }
+  &__image {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 350px;
+    max-height: 350px;
+    object-fit: cover;
+    border-top: 1px solid #fff;
+    animation: fadeIn 1s ease-in-out;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__decor {
+    position: absolute;
+    right: 0;
+    min-height: 380px;
+    max-height: 380px;
+    bottom: 0;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__info {
+    min-height: 20vh;
+    height: 50vh;
+    max-height: 380px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: calc(380px + 80px);
+    padding: 90px 40px;
+    @media screen and (max-width: 768px) {
+      position: relative;
+      background-color: #fff;
+      width: 100%;
+      padding: 60px 20px;
+      max-height: 240px;
+      min-height: 0;
+      max-width: 100%;
+    }
+  }
+  &__about {
+    margin-bottom: 25px;
+    max-width: 90%;
+    font-size: 20px;
+    margin: 0 auto 25px;
+    line-height: 150%;
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+      max-width: 340px;
+      text-align: center;
+    }
+  }
+  &__button {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    width: 100%;
+    svg {
+      max-width: 30px;
+      max-height: 30px;
+      min-height: 30px;
+      min-width: 30px;
+      margin-left: 10px;
+    }
+    @media screen and (max-width: 768px) {
+      max-width: 280px;
+      svg {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0;
+    overflow: hidden;
+  }
+  100% {
+    width: 100%;
+    overflow: auto;
+  }
+}
